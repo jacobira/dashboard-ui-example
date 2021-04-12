@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html>
+    <!-- 
+        Another delicious project by 
+        Raspberry Factory
+        -Jacob Baldwin, 
+             software developer
+             sole-proprietor
+
+    ____                   __                        
+   / __ \____ __________  / /_  ___  ____________  __
+  / /_/ / __ `/ ___/ __ \/ __ \/ _ \/ ___/ ___/ / / /
+ / _, _/ /_/ (__  ) /_/ / /_/ /  __/ /  / /  / /_/ / 
+/_/ |_|\__,_/____/ .___/_.___/\___/_/  /_/   \__, /  
+                /_/                         /____/   
+               ___    ___    ___
+             / /   \/ /   \/     \
+            | |    |       |      |
+           __\ ___ /\ ___ /\ ___ /__
+         / /  \ /     \/     \/     \
+        | |    |      |       |      |
+         \ ___ / \ ___ /\ ___ /\ ___/
+             / /   \/     \/     \
+            | |    |       |      |
+             \ ___ /\ ___ /\ ___ /
+                / /   \/     \
+               | |    |       |
+                \ ___ /\ ___ /
+    ______           __                  
+   / ____/___ ______/ /_____  _______  __
+  / /_  / __ `/ ___/ __/ __ \/ ___/ / / /
+ / __/ / /_/ / /__/ /_/ /_/ / /  / /_/ / 
+/_/    \__,_/\___/\__/\____/_/   \__, /  
+                                /____/   
+
+    -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Dashboard UI</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="view">
+            <div class="menu-base">
+                <div class="menu">
+                    <div class="menu-partition top-menu-partition">
+                        <div class="logo icon"></div>
+                        <div class="search icon"></div>
+                        <div class="history icon"></div>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="menu-partition middle-menu-partition">
+                        <div class="home icon"></div>
+                        <div class="compass icon"></div>
+                        <div class="contacts icon"></div>
+                        <div class="list icon"></div>
+                        <div class="people icon"></div>
+                        <div class="shared icon"></div>
+                        <div class="eBox icon"></div>
+                        <div class="book icon"></div>
+                        <div class="building icon"></div>
+                        <div class="chart icon"></div>
+                    </div>
+                    <div class="spacer bottom-spacer"></div>
+                    <div class="menu-partition bottom-menu-partition">
+                        <div class="arrows icon"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content-wrapper">
+                    <div class="content-partition top-cont-partition">
+                        <div class="box badge-box">
+                            <div class="badge-box-heading">
+                                <div class="heading-title">My Badge</div>
+                                <div class="heading-edit-btn icon" onclick="toggleModal('badge-modal')"></div>
+                            </div>
+                            <div class="badge-box-spacer"></div>
+                            <!-- Would populate badge info via JS when responsive -->
+                            <div class="badge-box-body">
+                                <div class="badge-box-item">
+                                    First Name:<div id="first-name">Jacob</div>
+                                </div>
+                                <div class="badge-box-item">
+                                    Preferred First Name for Badge:<div id="preferred-first">Jake</div>
+                                </div>
+                                <div class="badge-box-item">
+                                    Last Name:<div id="last-name">Baldwin</div>
+                                </div>
+                                <div class="badge-box-item">
+                                    Company:<div id="company">Raspberry Factory</div>
+                                </div>
+                                <div class="badge-box-item">
+                                    Onsite - Badge Holders:<div id="onsite-badge-holders">JVA</div>
+                                </div>
+                                <div class="badge-box-item">
+                                    Onsite - Aux:<div id="onsite-aux">1</div>
+                                </div>
+                            </div>
+                            <!-- Would populate footer info via JS when responsive -->
+                            <div class="badge-box-footer">
+                                <div class="timestamp-area">
+                                    <div>Check-In:</div>
+                                    <div class="timestamp" id="check-in-time">09/16/16 7:51 AM</div>
+                                </div>
+                                <div class="action-icon-area">
+                                    <div class="trash-icon icon" onclick="toggleModal('delete-badge-modal')"></div>
+                                    <div class="print-icon icon"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box calendar-box">
+                            <!-- Would populate heading info via JS when responsive -->
+                            <div class="calendar-box-heading">
+                                <div class="day-of-week">Sunday</div>
+                                <div class="date">July 15, 2018</div>
+                            </div>
+                            <div class="calendar-box-body">
+                                <div class="spacer"></div>
+                                <!-- Would populate calendar items via JS when responsive -->
+                                <div class="calendar-item">
+                                    <div class="calendar-item-details">
+                                        <div class="event-time">07:00 AM</div>
+                                        <div class="vertical-spacer"></div>
+                                        <div class="calendar-content empty">Find an event</div>
+                                    </div>
+                                    <div class="action-icons">
+                                        <!-- View of these icons would be set and determined by JS when responsive -->
+                                        <div class="edit-event-btn icon hidden"></div>
+                                        <div class="delete-event-btn icon hidden"></div>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="calendar-item">
+                                    <div class="calendar-item-details">
+                                        <div class="event-time">08:00 AM</div>
+                                        <div class="vertical-spacer"></div>
+                                        <div class="calendar-content">
+                                            <div class="event-name">BR1058 The benefits of beautiful UI in your web app</div>
+                                            <div class="event-time">08:00 AM - 08:45 AM</div>
+                                        </div>
+                                    </div>
+                                    <div class="action-icons">
+                                        <!-- View of these icons would be set and determined by JS when responsive -->
+                                        <div class="edit-event-btn icon"></div>
+                                        <div class="delete-event-btn icon"></div>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="calendar-item">
+                                    <div class="calendar-item-details">
+                                        <div class="event-time">09:00 AM</div>
+                                        <div class="vertical-spacer"></div>
+                                        <div class="calendar-content empty">Find an event</div>
+                                    </div>
+                                    <div class="action-icons">
+                                        <!-- View of these icons would be set and determined by JS when responsive -->
+                                        <div class="edit-event-btn icon hidden"></div>
+                                        <div class="delete-event-btn icon hidden"></div>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="calendar-item">
+                                    <div class="calendar-item-details">
+                                        <div class="event-time">10:00 AM</div>
+                                        <div class="vertical-spacer"></div>
+                                        <div class="calendar-content">
+                                            <div class="event-name">BR1063 Write Data virtualization by ACME Corp</div>
+                                            <div class="event-time">10:00 AM - 10:45 AM</div>
+                                        </div>
+                                    </div>
+                                    <div class="action-icons">
+                                        <!-- View of these icons would be set and determined by JS when responsive -->
+                                        <div class="edit-event-btn icon"></div>
+                                        <div class="delete-event-btn icon"></div>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="calendar-item">
+                                    <div class="calendar-item-details">
+                                        <div class="event-time">11:00 AM</div>
+                                        <div class="vertical-spacer"></div>
+                                        <div class="calendar-content empty">Find an event</div>
+                                    </div>
+                                    <div class="action-icons">
+                                        <!-- View of these icons would be set and determined by JS when responsive -->
+                                        <div class="edit-event-btn icon hidden"></div>
+                                        <div class="delete-event-btn icon hidden"></div>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="calendar-item">
+                                    <div class="calendar-item-details">
+                                        <div class="event-time">12:00 PM</div>
+                                        <div class="vertical-spacer"></div>
+                                        <div class="calendar-content">
+                                            <div class="event-name">BR1058 Presentation of UI skills</div>
+                                            <div class="event-time">12:00 PM - 12:45 PM</div>
+                                        </div>
+                                    </div>
+                                    <div class="action-icons">
+                                        <!-- View of these icons would be set and determined by JS when responsive -->
+                                        <div class="edit-event-btn icon"></div>
+                                        <div class="delete-event-btn icon"></div>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-partition bottom-cont-partition">
+                        <div class="box file-box">
+                            <div class="file-box-heading">
+                                <div class="heading-item checkbox">
+                                    <div class="checkbox-icon unchecked" id="checkAllBox" onclick="selectAll()"></div>
+                                </div>
+                                <div class="heading-item file-name">
+                                    <div class="text">File Name</div>
+                                </div>
+                                <div class="heading-item file-type">
+                                    <div class="text">File Type</div>
+                                </div>
+                                <div class="heading-item file-create-date">
+                                    <div class="text">File Create Date</div>
+                                </div>
+                                <div class="heading-item file-publish-status">
+                                    <div class="text">Published Status</div>
+                                </div>
+                                <div class="heading-item session-name">
+                                    <div class="text">Session Name</div>
+                                </div>
+                                <div class="heading-item session-code">
+                                    <div class="text">Session Code</div>
+                                </div>
+                                <div class="heading-item session-status">
+                                    <div class="text">Session Status</div>
+                                </div>
+                            </div>
+                            
+                            <div class="file-box-body">
+                                <div class="heading-spacer"></div>
+                                <!-- Would populate file items/info via JS when responsive -->
+                                <div class="file-box-item" id="item-1">
+                                    <div class="checkbox">
+                                        <div class="checkbox-icon unchecked" id="file-box-1" onclick="checkBox('file-box-1')"></div>
+                                    </div>
+                                    <div class="file-name">
+                                        <div class="text">New Microsoft Powerpoint Presentation</div>
+                                    </div>
+                                    <div class="file-type">
+                                        <div class="text">Presentation</div>
+                                    </div>
+                                    <div class="file-create-date">
+                                        <div class="text">September 06, 2017 | 02:40 PM</div>
+                                    </div>
+                                    <div class="file-publish-status">
+                                        <div class="text">Not Published</div>
+                                    </div>
+                                    <div class="session-name">
+                                        <div class="text">Reject Data integration until Column-oriented databases</div>
+                                    </div>
+                                    <div class="session-code">
+                                        <div class="text">BR1000</div>
+                                    </div>
+                                    <div class="session-status">
+                                        <div class="text">Accepted</div>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="file-box-item" id="item-2">
+                                    <div class="checkbox">
+                                        <div class="checkbox-icon unchecked" id="file-box-2" onclick="checkBox('file-box-2')"></div>
+                                    </div>
+                                    <div class="file-name">
+                                        <div class="text">New Microsoft Powerpoint Presentation</div>
+                                    </div>
+                                    <div class="file-type">
+                                        <div class="text">Presentation</div>
+                                    </div>
+                                    <div class="file-create-date">
+                                        <div class="text">September 06, 2017 | 02:40 PM</div>
+                                    </div>
+                                    <div class="file-publish-status">
+                                        <div class="text">Not Published</div>
+                                    </div>
+                                    <div class="session-name">
+                                        <div class="text">Reject Data integration until Column-oriented databases</div>
+                                    </div>
+                                    <div class="session-code">
+                                        <div class="text">BR1003</div>
+                                    </div>
+                                    <div class="session-status">
+                                        <div class="text">Accepted</div>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="file-box-item" id="item-3">
+                                    <div class="checkbox">
+                                        <div class="checkbox-icon unchecked" id="file-box-3" onclick="checkBox('file-box-3')"></div>
+                                    </div>
+                                    <div class="file-name">
+                                        <div class="text">Portugal Presentation</div>
+                                    </div>
+                                    <div class="file-type">
+                                        <div class="text">Presentation</div>
+                                    </div>
+                                    <div class="file-create-date">
+                                        <div class="text">December 01, 2017 | 01:02 PM</div>
+                                    </div>
+                                    <div class="file-publish-status">
+                                        <div class="text">Not Published</div>
+                                    </div>
+                                    <div class="session-name">
+                                        <div class="text">Promise Data virtualization for ACME Corp</div>
+                                    </div>
+                                    <div class="session-code">
+                                        <div class="text">BR1003</div>
+                                    </div>
+                                    <div class="session-status">
+                                        <div class="text">Accepted</div>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="file-box-item" id="item-4">
+                                    <div class="checkbox">
+                                        <div class="checkbox-icon unchecked" id="file-box-4" onclick="checkBox('file-box-4')"></div>
+                                    </div>
+                                    <div class="file-name">
+                                        <div class="text">New Microsoft Powerpoint Presentation</div>
+                                    </div>
+                                    <div class="file-type">
+                                        <div class="text">Presentation</div>
+                                    </div>
+                                    <div class="file-create-date">
+                                        <div class="text">September 06, 2017 | 02:40 PM</div>
+                                    </div>
+                                    <div class="file-publish-status">
+                                        <div class="text">Not Published</div>
+                                    </div>
+                                    <div class="session-name">
+                                        <div class="text">Reject Data integration until Column-oriented databases</div>
+                                    </div>
+                                    <div class="session-code">
+                                        <div class="text">BR1000</div>
+                                    </div>
+                                    <div class="session-status">
+                                        <div class="text">Accepted</div>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="file-box-item" id="item-5">
+                                    <div class="checkbox">
+                                        <div class="checkbox-icon unchecked" id="file-box-5" onclick="checkBox('file-box-5')"></div>
+                                    </div>
+                                    <div class="file-name">
+                                        <div class="text">New Microsoft Powerpoint Presentation</div>
+                                    </div>
+                                    <div class="file-type">
+                                        <div class="text">Presentation</div>
+                                    </div>
+                                    <div class="file-create-date">
+                                        <div class="text">September 06, 2017 | 02:40 PM</div>
+                                    </div>
+                                    <div class="file-publish-status">
+                                        <div class="text">Not Published</div>
+                                    </div>
+                                    <div class="session-name">
+                                        <div class="text">Reject Data integration until Column-oriented databases</div>
+                                    </div>
+                                    <div class="session-code">
+                                        <div class="text">BR1000</div>
+                                    </div>
+                                    <div class="session-status">
+                                        <div class="text">Accepted</div>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="file-box-item" id="item-6">
+                                    <div class="checkbox">
+                                        <div class="checkbox-icon unchecked" id="file-box-6" onclick="checkBox('file-box-6')"></div>
+                                    </div>
+                                    <div class="file-name">
+                                        <div class="text">New Microsoft Powerpoint Presentation</div>
+                                    </div>
+                                    <div class="file-type">
+                                        <div class="text">Presentation</div>
+                                    </div>
+                                    <div class="file-create-date">
+                                        <div class="text">September 06, 2017 | 02:40 PM</div>
+                                    </div>
+                                    <div class="file-publish-status">
+                                        <div class="text">Not Published</div>
+                                    </div>
+                                    <div class="session-name">
+                                        <div class="text">Reject Data integration until Column-oriented databases</div>
+                                    </div>
+                                    <div class="session-code">
+                                        <div class="text">BR1000</div>
+                                    </div>
+                                    <div class="session-status">
+                                        <div class="text">Accepted</div>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="file-box-item" id="item-7">
+                                    <div class="checkbox">
+                                        <div class="checkbox-icon unchecked" id="file-box-7" onclick="checkBox('file-box-7')"></div>
+                                    </div>
+                                    <div class="file-name">
+                                        <div class="text">New Microsoft Powerpoint Presentation</div>
+                                    </div>
+                                    <div class="file-type">
+                                        <div class="text">Presentation</div>
+                                    </div>
+                                    <div class="file-create-date">
+                                        <div class="text">September 06, 2017 | 02:40 PM</div>
+                                    </div>
+                                    <div class="file-publish-status">
+                                        <div class="text">Not Published</div>
+                                    </div>
+                                    <div class="session-name">
+                                        <div class="text">Reject Data integration until Column-oriented databases</div>
+                                    </div>
+                                    <div class="session-code">
+                                        <div class="text">BR1000</div>
+                                    </div>
+                                    <div class="session-status">
+                                        <div class="text">Accepted</div>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-wrapper hidden" id="badge-modal">
+            <div class="modal">
+                <div class="modal-header">Badge Modal Header</div>
+                <div class="modal-body">
+                    Bacon ipsum dolor amet buffalo fatback pork sausage jowl, ham leberkas andouille flank chislic kevin sirloin prosciutto spare ribs. Tri-tip tenderloin chuck filet mignon kevin. Drumstick shoulder meatloaf capicola fatback, tongue flank sirloin. Landjaeger buffalo tri-tip ham hock pancetta meatball chislic short ribs sirloin shank tail tongue ground round biltong.
+                </div>
+                <div class="modal-footer">
+                    <div class="close-btn" onclick="toggleModal('badge-modal')">Close</div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-wrapper hidden" id="delete-badge-modal">
+            <div class="modal">
+                <div class="modal-header">Delete Badge Info</div>
+                <div class="modal-body">
+                    Do you want to delete user info?
+                </div>
+                <div class="modal-footer mult-buttons">
+                    <div class="close-btn" onclick="toggleModal('delete-badge-modal')">No</div>
+                    <div class="close-btn" onclick="toggleModal('delete-badge-modal'); deleteBadgeInfo()">Yes</div>
+                </div>
+            </div>
+        </div>
+        <script src="./script.js" async defer></script>
+    </body>
+</html>

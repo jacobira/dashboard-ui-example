@@ -1,0 +1,492 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  min-height: 800px;
+  margin: 0;
+  font-family: sans-serif;
+  color: gray;
+  font-size: 12px;
+}
+body .view {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: lightgray;
+}
+body .view .menu-base {
+  width: 60px;
+  background-image: linear-gradient(hotpink, purple);
+  box-shadow: 0 0 20px black;
+  z-index: 2;
+}
+@media screen and (min-width: 700px) {
+  body .view .menu-base {
+    width: 100px;
+  }
+}
+body .view .menu-base .menu {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+}
+body .view .menu-base .menu .spacer {
+  height: 1px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+body .view .menu-base .menu .bottom-spacer {
+  position: absolute;
+  bottom: 50px;
+}
+body .view .menu-base .menu .icon {
+  height: 40px;
+  width: 40px;
+  background-size: fill;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+body .view .menu-base .menu .menu-partition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+body .view .menu-base .menu .top-menu-partition {
+  padding-top: 20px;
+}
+body .view .menu-base .menu .top-menu-partition .logo {
+  background-image: url("./assets/JBWebDevLogo.png");
+  background-size: contain;
+  margin-bottom: 20px;
+}
+body .view .menu-base .menu .top-menu-partition .search {
+  background-image: url("./assets/searchIcon.svg");
+}
+body .view .menu-base .menu .top-menu-partition .history {
+  background-image: url("./assets/historyIcon.svg");
+}
+body .view .menu-base .menu .middle-menu-partition {
+  justify-content: left;
+  margin-top: 20px;
+}
+body .view .menu-base .menu .middle-menu-partition .home {
+  background-image: url("./assets/homeIcon.svg");
+}
+body .view .menu-base .menu .middle-menu-partition .compass {
+  background-image: url("./assets/compassIcon.svg");
+}
+body .view .menu-base .menu .middle-menu-partition .contacts {
+  background-image: url("./assets/contactsIcon.svg");
+}
+body .view .menu-base .menu .middle-menu-partition .list {
+  background-image: url("./assets/listIcon.svg");
+}
+body .view .menu-base .menu .middle-menu-partition .people {
+  background-image: url("./assets/peopleIcon.svg");
+}
+body .view .menu-base .menu .middle-menu-partition .shared {
+  background-image: url("./assets/sharedFolderIcon.svg");
+}
+body .view .menu-base .menu .middle-menu-partition .eBox {
+  background-image: url("./assets/eBoxIcon.svg");
+}
+body .view .menu-base .menu .middle-menu-partition .book {
+  background-image: url("./assets/bookIcon.svg");
+}
+body .view .menu-base .menu .middle-menu-partition .building {
+  background-image: url("./assets/buildingIcon.svg");
+}
+body .view .menu-base .menu .middle-menu-partition .chart {
+  background-image: url("./assets/chartIcon.svg");
+}
+body .view .menu-base .menu .bottom-menu-partition {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 60%;
+}
+body .view .menu-base .menu .bottom-menu-partition .arrows {
+  background-image: url("./assets/arrowsIcon.svg");
+}
+body .view .content {
+  width: calc(100% - 60px);
+  z-index: 1;
+  overflow-y: auto;
+}
+@media screen and (min-width: 700px) {
+  body .view .content {
+    width: calc(100% - 100px);
+    display: flex;
+    justify-content: center;
+  }
+}
+body .view .content .content-wrapper {
+  max-width: 1200px;
+}
+@media screen and (min-width: 700px) {
+  body .view .content .content-wrapper {
+    min-width: 600px;
+  }
+}
+body .view .content .content-wrapper .icon {
+  height: 40px;
+  width: 40px;
+  background-size: fill;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+body .view .content .content-wrapper .content-partition {
+  width: 100%;
+}
+@media screen and (min-width: 700px) {
+  body .view .content .content-wrapper .content-partition {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+body .view .content .content-wrapper .content-partition .box {
+  background-color: white;
+  box-shadow: 0 0 3px gray;
+}
+body .view .content .content-wrapper .top-cont-partition {
+  width: calc(100% - 20px);
+  padding: 10px;
+}
+@media screen and (min-width: 700px) {
+  body .view .content .content-wrapper .top-cont-partition {
+    height: 40%;
+    max-height: 350px;
+    padding: 20px 20px 10px 20px;
+    width: calc(100% - 40px);
+  }
+}
+body .view .content .content-wrapper .top-cont-partition .box {
+  height: 95%;
+}
+body .view .content .content-wrapper .top-cont-partition .badge-box {
+  height: 100%;
+  max-width: 450px;
+  margin-bottom: 20px;
+  min-height: 300px;
+  position: relative;
+}
+@media screen and (min-width: 700px) {
+  body .view .content .content-wrapper .top-cont-partition .badge-box {
+    width: 33%;
+    min-width: 315px;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}
+body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin-left: 20px;
+}
+@media screen and (min-width: 700px) {
+  body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-heading {
+    margin: 20px;
+    height: auto;
+  }
+}
+body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-heading .heading-title {
+  font-size: 20px;
+}
+@media screen and (min-width: 700px) {
+  body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-heading .heading-title {
+    font-size: 30px;
+  }
+}
+body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-heading .heading-edit-btn {
+  height: 30px;
+  width: 30px;
+  background-image: url("./assets/editIcon.svg");
+  margin-right: 10px;
+}
+@media screen and (min-width: 700px) {
+  body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-heading .heading-edit-btn {
+    margin-right: 0;
+  }
+}
+body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-spacer {
+  width: 100%;
+  height: 1px;
+  background-color: lightgray;
+}
+body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-body {
+  margin: 10px;
+}
+body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-body .badge-box-item {
+  display: flex;
+  font-weight: bold;
+  margin: 10px;
+}
+body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-body .badge-box-item div {
+  font-weight: normal;
+  margin-left: 5px;
+}
+body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-footer {
+  width: calc(100% - 20px);
+  position: absolute;
+  bottom: 0;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-footer .timestamp-area {
+  display: flex;
+  margin-left: 10px;
+}
+body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-footer .timestamp-area .timestamp {
+  margin-left: 10px;
+}
+body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-footer .action-icon-area {
+  display: flex;
+}
+body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-footer .action-icon-area .trash-icon {
+  background-image: url("./assets/trashIcon.svg");
+  margin-right: 10px;
+}
+body .view .content .content-wrapper .top-cont-partition .badge-box .badge-box-footer .action-icon-area .print-icon {
+  background-image: url("./assets/printIcon.svg");
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  overflow-x: auto;
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .spacer {
+  height: 1px;
+  width: 100%;
+  background-color: lightgray;
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-heading {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  min-width: 600px;
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-heading .day-of-week {
+  font-size: 20px;
+}
+@media screen and (min-width: 700px) {
+  body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-heading .day-of-week {
+    font-size: 30px;
+  }
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-heading .date {
+  margin-left: 10px;
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-body {
+  height: calc(100% - 76px);
+  overflow-y: auto;
+  min-width: 600px;
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-body .vertical-spacer {
+  height: 20px;
+  width: 2px;
+  background-color: red;
+  margin: 0 10px 0 10px;
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-body .calendar-item {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 20px 5px 20px;
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-body .calendar-item .calendar-item-details {
+  display: flex;
+  align-items: center;
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-body .calendar-item .calendar-item-details .event-time {
+  font-weight: bold;
+  min-width: 70px;
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-body .calendar-item .calendar-item-details .calendar-content .event-time {
+  font-size: 10px;
+  font-weight: bold;
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-body .calendar-item .action-icons {
+  display: flex;
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-body .calendar-item .action-icons .edit-event-btn {
+  background-image: url("./assets/purpleEditIcon.svg");
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-body .calendar-item .action-icons .delete-event-btn {
+  background-image: url("./assets/purpleTrashIcon.svg");
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-body .calendar-item .empty {
+  color: purple;
+  font-weight: bold;
+  cursor: pointer;
+}
+body .view .content .content-wrapper .top-cont-partition .calendar-box .calendar-box-body .calendar-item .hidden {
+  display: none;
+}
+body .view .content .content-wrapper .bottom-cont-partition {
+  width: calc(100% - 20px);
+  padding: 10px;
+}
+@media screen and (min-width: 700px) {
+  body .view .content .content-wrapper .bottom-cont-partition {
+    padding: 10px 20px 20px 20px;
+    width: calc(100% - 40px);
+  }
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box {
+  height: 95%;
+  width: 100%;
+  overflow-x: auto;
+}
+@media screen and (max-width: 699px) {
+  body .view .content .content-wrapper .bottom-cont-partition .file-box {
+    font-size: 10px;
+  }
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .spacer {
+  height: 1px;
+  width: 100%;
+  background-color: lightgray;
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .heading-spacer {
+  height: 2px;
+  width: 100%;
+  background-color: purple;
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .checkbox {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .checkbox .checkbox-icon {
+  height: 25px;
+  width: 25px;
+  background-size: fill;
+  background-repeat: no-repeat;
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .checkbox .unchecked {
+  background-image: url("./assets/uncheckedBoxIcon.svg");
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .checkbox .checked {
+  background-image: url("./assets/checkedBoxIcon.svg");
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .file-name {
+  width: calc(30% - (360px * 0.3));
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .file-type {
+  width: 100px;
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .file-create-date {
+  width: calc(20% - (360px * 0.2));
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .file-publish-status {
+  width: 100px;
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .session-name {
+  width: calc(30% - (360px * 0.3));
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .session-code {
+  width: 100px;
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .session-status {
+  width: calc(20% - (360px * 0.2));
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .file-box-heading {
+  display: flex;
+  min-width: 600px;
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .file-box-heading .heading-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 10px 0;
+  font-weight: bold;
+  color: purple;
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .file-box-heading .heading-item .text {
+  padding-right: 20px;
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .file-box-body {
+  min-width: 600px;
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .file-box-body .file-box-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 10px 0;
+}
+body .view .content .content-wrapper .bottom-cont-partition .file-box .file-box-body .file-box-item div .text {
+  padding-right: 20px;
+}
+body .modal-wrapper {
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(2px);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+body .modal-wrapper .modal {
+  height: 300px;
+  width: 100%;
+  background-image: linear-gradient(hotpink, purple);
+  box-shadow: 0 0 10px black;
+  color: white;
+}
+@media screen and (min-width: 400px) {
+  body .modal-wrapper .modal {
+    width: 400px;
+  }
+}
+body .modal-wrapper .modal .modal-header {
+  height: 50px;
+  width: 100%;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .modal-wrapper .modal .modal-body {
+  height: 200px;
+  padding: 0 30px 0 30px;
+  font-size: 14px;
+}
+body .modal-wrapper .modal .modal-footer {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .modal-wrapper .modal .modal-footer .close-btn {
+  height: 30px;
+  width: 70px;
+  border: 2px solid white;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+body .modal-wrapper .modal .mult-buttons {
+  justify-content: space-evenly;
+}
+body .hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,531 @@
+
+// For customization of colors to client specifications
+$theme-color1: hotpink;
+$theme-color2: purple;
+$theme-color3: lightgray;
+//
+
+
+
+body {
+    height: 100vh;
+    width: 100vw;
+    min-height: 800px;
+    margin: 0;
+    font-family: sans-serif;
+    color: gray;
+    font-size: 12px;
+
+    .view {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        background-color: $theme-color3;
+
+        .menu-base {
+            width: 60px;
+            @media screen and (min-width: 700px){
+                width: 100px;
+            }
+            background-image: linear-gradient($theme-color1, $theme-color2);
+            box-shadow: 0 0 20px black;
+            z-index: 2;
+
+            .menu {
+                position: relative;
+                z-index: 3;
+                height: 100%;
+
+                .spacer {
+                    height: 1px;
+                    width: 100%;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    background-color: white;
+                }
+                .bottom-spacer {
+                    position: absolute;
+                    bottom: 50px;
+                }
+                .icon {
+                    height: 40px;
+                    width: 40px;
+                    background-size: fill;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                }
+                .menu-partition {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding-left: 20%;
+                    padding-right: 20%;
+                }
+                .top-menu-partition {
+                    padding-top: 20px;
+
+                    .logo {
+                        background-image: url('./assets/JBWebDevLogo.png');
+                        background-size: contain;
+                        margin-bottom: 20px;
+                    }
+                    .search {
+                        background-image: url('./assets/searchIcon.svg');
+                    }
+                    .history {
+                        background-image: url('./assets/historyIcon.svg');
+                    }
+                }
+                .middle-menu-partition {
+                    justify-content: left;
+                    margin-top: 20px;
+
+                    .home  {
+                        background-image: url('./assets/homeIcon.svg');
+                    }
+                    .compass {
+                        background-image: url('./assets/compassIcon.svg');
+                    }
+                    .contacts {
+                        background-image: url('./assets/contactsIcon.svg');
+                    }
+                    .list {
+                        background-image: url('./assets/listIcon.svg');
+                    }
+                    .people {
+                        background-image: url('./assets/peopleIcon.svg');
+                    }
+                    .shared {
+                        background-image: url('./assets/sharedFolderIcon.svg');
+                    }
+                    .eBox {
+                        background-image: url('./assets/eBoxIcon.svg');
+                    }
+                    .book {
+                        background-image: url('./assets/bookIcon.svg');
+                    }
+                    .building {
+                        background-image: url('./assets/buildingIcon.svg');
+                    }
+                    .chart {
+                        background-image: url('./assets/chartIcon.svg');
+                    }
+                }
+                .bottom-menu-partition {
+                    position: absolute;
+                    bottom: 0;
+                    height: 50px;
+                    width: 60%;
+
+                    .arrows {
+                        background-image: url('./assets/arrowsIcon.svg');
+                    }
+                }
+            }
+        }
+
+        .content {
+            width: calc(100% - 60px);
+            @media screen and (min-width: 700px){
+                width: calc(100% - 100px);
+                display: flex;
+                justify-content: center;
+            }
+            z-index: 1;
+            overflow-y: auto;
+
+            .content-wrapper {
+                max-width: 1200px;
+                @media screen and (min-width: 700px){
+                    min-width: 600px;
+                }
+
+                .icon {
+                    height: 40px;
+                    width: 40px;
+                    background-size: fill;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    cursor: pointer;
+                }
+    
+                // For mobile and tablet sizes the flex direction should be column
+                .content-partition {
+                    width: 100%;
+                    @media screen and (min-width: 700px){
+                        display: flex;
+                        // align-items: center;
+                        justify-content: space-between;
+                    }
+                    .box {
+                        background-color: white;
+                        box-shadow: 0 0 3px gray;
+                    }
+                }
+                //
+    
+                .top-cont-partition {
+                    // height should only be a min height of appr 200px for mobile/tablet
+                    width: calc(100% - 20px);
+                    padding: 10px;
+                    @media screen and (min-width: 700px){
+                        height: 40%;
+                        max-height: 350px; 
+                        padding: 20px 20px 10px 20px;
+                        width: calc(100% - 40px);
+                    }
+                    //
+                    .box {
+                        // height should be set to a minimum only for mobile/tablet
+                        height: 95%;
+                    }
+                    // Widths of boxes should all be uniform at 95%, just like bottom box, for mobile/tablet
+                    .badge-box {
+                        height: 100%;
+                        max-width: 450px;
+                        margin-bottom: 20px;
+                    
+                        @media screen and (min-width: 700px){
+                            width: 33%;
+                            min-width: 315px;
+                            margin-right: 20px;
+                            margin-bottom: 0;
+                        }
+                        min-height: 300px;
+                        position: relative;
+    
+                        .badge-box-heading {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            height: 50px;
+                            margin-left: 20px;
+                            @media screen and (min-width: 700px){
+                                margin: 20px;
+                                height: auto;
+                            }
+                            
+                            .heading-title {
+                                font-size: 20px;
+                                @media screen and (min-width: 700px){
+                                    font-size: 30px;
+                                }
+                            }
+                            .heading-edit-btn {
+                                height: 30px;
+                                width: 30px;
+                                background-image: url('./assets/editIcon.svg');
+                                margin-right: 10px;
+                                @media screen and (min-width: 700px){
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                        .badge-box-spacer {
+                            width: 100%;
+                            height: 1px;
+                            background-color: $theme-color3;
+                        }
+                        .badge-box-body {
+                            margin: 10px;
+    
+                            .badge-box-item {
+                                display: flex;
+                                font-weight: bold;
+                                margin: 10px;
+                                div {
+                                    font-weight: normal;
+                                    margin-left: 5px;
+                                }
+                            }
+                        }
+                        .badge-box-footer {
+                            width: calc(100% - 20px);
+                            position: absolute;
+                            bottom: 0;
+                            margin: 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+    
+                            .timestamp-area {
+                                display: flex;
+                                margin-left: 10px;
+    
+                                .timestamp {
+                                    margin-left: 10px;
+                                }
+                            }
+                            .action-icon-area {
+                                display: flex;
+    
+                                .trash-icon {
+                                    background-image: url('./assets/trashIcon.svg');
+                                    margin-right: 10px;
+                                }
+                                .print-icon {
+                                    background-image: url('./assets/printIcon.svg');
+                                }
+                            }
+                        }
+                    }
+    
+                    .calendar-box {
+                        width: 100%;
+                        height: 100%;
+                        min-height: 320px;
+                        overflow-x: auto;
+    
+                        .spacer {
+                            height: 1px;
+                            width: 100%;
+                            background-color: $theme-color3;
+                        }
+    
+                        .calendar-box-heading {
+                            display: flex;
+                            align-items: center;
+                            margin: 20px;
+                            min-width: 600px;
+    
+                            .day-of-week {
+                                font-size: 20px;
+                                @media screen and (min-width: 700px){
+                                    font-size: 30px;
+                                }
+                            }
+                            .date {
+                                margin-left: 10px;
+                            }
+                        }
+                        .calendar-box-body {
+                            height: calc(100% - 76px);
+                            overflow-y: auto;
+                            min-width: 600px;
+    
+                            .vertical-spacer {
+                                height: 20px;
+                                width: 2px;
+                                background-color: red;
+                                margin: 0 10px 0 10px;
+                            }
+                            
+                            .calendar-item {
+                                min-height: 40px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                margin: 5px 20px 5px 20px;
+    
+                                .calendar-item-details {
+                                    display: flex;
+                                    align-items: center;
+    
+                                    .event-time {
+                                        font-weight: bold;
+                                        min-width: 70px;
+                                    }
+                                    .calendar-content {
+                                        .event-time {
+                                            font-size: 10px;
+                                            font-weight: bold;
+                                        }
+                                    }
+                                }
+                                .action-icons {
+                                    display: flex;
+                                    .edit-event-btn {
+                                        background-image: url('./assets/purpleEditIcon.svg');
+                                    }
+                                    .delete-event-btn {
+                                        background-image:  url('./assets/purpleTrashIcon.svg');
+                                    }
+                                }
+                                .empty {
+                                    color: $theme-color2;
+                                    font-weight: bold;
+                                    cursor: pointer;
+                                }
+                                .hidden {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                    //
+                }
+    
+                .bottom-cont-partition {
+                    width: calc(100% - 20px);
+                    padding: 10px;
+                    
+                    //height should only be a min height of appr 200px for mobile and tablet
+                    @media screen and (min-width: 700px){
+                        padding: 10px 20px 20px 20px;
+                        width: calc(100% - 40px);
+                    }
+                    //
+                    .file-box {
+                        height: 95%;
+                        width: 100%;
+                        overflow-x: auto;
+                        @media screen and (max-width: 699px){
+                            font-size: 10px;
+                        }
+
+                        .spacer {
+                            height: 1px;
+                            width: 100%;
+                            background-color: $theme-color3;
+                        }
+                        .heading-spacer {
+                            height: 2px;
+                            width: 100%;
+                            background-color: $theme-color2;
+                        }
+    
+                        .checkbox {
+                            width: 60px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+    
+                            .checkbox-icon {
+                                height: 25px;
+                                width: 25px;
+                                background-size: fill;
+                                background-repeat: no-repeat;
+                            }
+                            .unchecked {
+                                background-image: url('./assets/uncheckedBoxIcon.svg');
+                            }
+                            .checked {
+                                background-image: url('./assets/checkedBoxIcon.svg');
+                            }
+                        }
+                        .file-name {
+                            width: calc(30% - (360px * 0.3));
+                        }
+                        .file-type {
+                            width: 100px;
+                        }
+                        .file-create-date {
+                            width: calc(20% - (360px * 0.2));
+                        }
+                        .file-publish-status {
+                            width: 100px;
+                        }
+                        .session-name {
+                            width: calc(30% - (360px * 0.3));
+                        }
+                        .session-code {
+                            width: 100px;
+                        }
+                        .session-status {
+                            width: calc(20% - (360px * 0.2));
+                        }
+                        
+                        .file-box-heading {
+                            display: flex;
+                            min-width: 600px;
+
+    
+                            .heading-item {
+                                display: flex;
+                                align-items: center;
+                                margin: 10px 0 10px 0;
+                                font-weight: bold;
+                                color: $theme-color2;
+    
+                                .text {
+                                    padding-right: 20px;
+                                }
+                            }
+                            
+                        }
+    
+                        .file-box-body {
+                            min-width: 600px;
+                            
+                            .file-box-item {
+                                display: flex;
+                                align-items: center;
+                                margin: 10px 0 10px 0;
+    
+                                div {
+                                    .text {
+                                        padding-right: 20px;
+                                    }
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .modal-wrapper {
+        height: 100vh;
+        width: 100vw;
+        backdrop-filter: blur(2px);
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+         
+
+        .modal {
+            height: 300px;
+            width: 100%;
+            @media screen and (min-width: 400px){
+                width: 400px;
+            }
+            background-image: linear-gradient($theme-color1, $theme-color2);
+            box-shadow: 0 0 10px black;
+            color: white;
+
+            .modal-header {
+                height: 50px;
+                width: 100%;
+                font-size: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .modal-body {
+                height: 200px;
+                padding: 0 30px 0 30px;
+                font-size: 14px;
+            }
+            .modal-footer {
+                height: 50px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .close-btn {
+                    height: 30px;
+                    width: 70px;
+                    border: 2px solid white;
+                    border-radius: 2px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                }
+            }
+            .mult-buttons {
+                justify-content: space-evenly;
+            }
+        }
+    }
+    .hidden {
+        display: none;
+    }
+}
